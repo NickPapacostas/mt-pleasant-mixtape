@@ -8,6 +8,5 @@ Bundler.require(*Rails.groups)
 
 module MtPleasantMixtape
   class Application < Rails::Application
-    config.serve_static_assets = true
   end
 end
