@@ -1,0 +1,4 @@
+<% 10.times do |n| %>
+  artist_<%= n %>:
+    name: <%= "artist#{n}" %>
+<% end %>

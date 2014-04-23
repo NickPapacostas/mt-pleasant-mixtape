@@ -5,6 +5,8 @@ gem 'rails', '4.0.4'
 
 gem 'pg'
 
+gem 'haml-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -34,6 +36,10 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
+gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
