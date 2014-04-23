@@ -1,4 +1,4 @@
-class PagesController < ActionController::Base
+class PagesController < ApplicationController
   def show
     render params[:id]
   end
