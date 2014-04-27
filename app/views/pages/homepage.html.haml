@@ -1,0 +1,19 @@
+= stylesheet_link_tag("homepage")
+= javascript_include_tag("soundcloud_init")
+/ Full Page Image Header Area
+#artists.header
+  #artists-app.display-view
+    .vert-text{'ng-show' => "currentPage == '/artists'"}
+      #artists
+        {{currentArtist}}
+        %h2 Artists:
+        %br
+        %ul.artist-list
+          %li.artist{'ng-repeat' => "artist in artists"}
+            %a.name{'ng-click' => "setActiveArtist(artist.name)"} {{artist.name}}
+            .description{'ng-if' => "activeArtist == artist.name", 'ng-bind-html' => "artist.description"}
+
+    .vert-text{'ng-show' => "currentPage == '/about'"}
+      #about
+        %h2 About:
+        Stuff about the mixtape!

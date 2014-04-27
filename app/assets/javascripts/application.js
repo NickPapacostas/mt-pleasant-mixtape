@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require twitter/bootstrap
 //= require turbolinks
+//= require soundcloud_widget
+
 //= require angular
 //= require angular-resource
+//= require angular-sanitize
 
 //= require_tree .
 
-$(function(){ $(document).foundation(); });

@@ -9,8 +9,9 @@ Bundler.require(*Rails.groups)
 module MtPleasantMixtape
   class Application < Rails::Application
     config.assets.precompile += [
+      'bootstrap.css',
+      'stylish-portfolio.css',
       'application.css',
-      'foundation.css',
       'homepage.css'
     ]
 

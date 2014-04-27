@@ -1,6 +1,21 @@
 @import compass/css3
 
-.content
+body
   +background-image(url(background.jpg))
+  padding: 0 0 0 0 !important
   height: image-height("background.jpg")
   +background-size(cover)
+
+.content
+  height: image-height("background.jpg")
+  +background-size(cover)
+  z-index: 1
+
+.side-nav
+  background-color: white
+  clear-both
+
+#artists-app
+
+.display-view
+  background-color: rgba(255, 255, 255, 0.5)

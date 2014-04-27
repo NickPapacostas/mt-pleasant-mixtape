@@ -1,0 +1,64 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    %title Mt. Pleasant Mixtape
+    / Bootstrap core CSS
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+  %body{'ng-app' => "ArtistsApp"}
+    .artistsCtrl{'ng-controller' => "ArtistsCtrl"}
+
+      / Side Menu
+      %a#menu-toggle.btn.btn-primary.btn-lg.toggle{href: "#"}
+        Menu
+
+      #sidebar-wrapper
+        %ul.sidebar-nav
+          %a#menu-close.btn.btn-default.btn-lg.pull-right.toggle{href: "#"}
+            %i.fa.fa-times
+              X
+          %li.sidebar-brand
+            %a{'ng-click' => "setPath('/')"} Mt. Pleasant MixTape
+          %li
+            %a{href: "#artists", 'ng-click' => "setPath('/artists')"} Artists
+          %li
+            %a{href: "#about", 'ng-click' => "setPath('/about')"} About
+
+          %iframe#sc-widget{frameborder: "no", height: "465", scrolling: "no", src: "https://w.soundcloud.com/player/?url=https://soundcloud.com/noochluv", width: "100%"}
+
+
+      = yield
+      / /Full Page Image Header Area
+      / Intro
+      / JavaScript
+      / Custom JavaScript for the Side Menu and Smooth Scrolling
+      :javascript
+        $("#menu-close").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+      :javascript
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+      :javascript
+        $(function() {
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
