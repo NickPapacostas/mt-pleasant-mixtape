@@ -1,7 +1,24 @@
 = stylesheet_link_tag("homepage")
+= javascript_include_tag("soundcloud_init")
 
 #content
   = image_tag "mtpmt-bg-static.jpg", {'class' => 'staticimg'}
+  #artists.header
+    #artists-app.display-view
+      .vert-text{'ng-show' => "currentPage == '/artists'"}
+        #artists
+          %h2 Artists:
+          %br
+          %ul.artist-list
+            %li.artist{'ng-repeat' => "artist in artists"}
+              %a.name{'ng-click' => "setActiveArtist(artist.name)"} {{artist.name}}
+              .description{'ng-if' => "activeArtist == artist.name", 'ng-bind-html' => "artist.description"}
+
+      .vert-text{'ng-show' => "currentPage == '/about'"}
+        #about
+          %h2 About:
+          Stuff about the mixtape!
+
   %article#manned-flight
     %h2 Artists of Mount Pleasant Present...
     %h6 (Scroll)
@@ -39,6 +56,7 @@
         %a{href: "#"} Wanted Man - Folks On Medicine
       %li
         %a{href: "#"} Who Needs a Pulse - Track Name
+
 / Parallax foreground
 #parallax-bg3
   = image_tag "mtpmt-pigeon.png", {id: "bg3-1"}
