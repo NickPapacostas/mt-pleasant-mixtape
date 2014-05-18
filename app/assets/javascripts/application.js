@@ -20,5 +20,7 @@
 //= require angular-resource
 //= require angular-sanitize
 
+//= require parallax
+
 //= require_tree .
 
