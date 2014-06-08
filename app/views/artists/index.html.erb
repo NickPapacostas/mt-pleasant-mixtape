@@ -1,0 +1,91 @@
+<div class="w-nav navbar" data-collapse="all" data-animation="over-right" data-duration="400" data-contain="1">
+  <div class="w-container">
+    <a class="w-nav-brand" href="#"></a>
+    <nav class="w-nav-menu nab-menu-open-container" role="navigation">
+      <a class="w-nav-link nav-link" href="#/homepage">Home</a>
+      <a class="w-nav-link nav-link" href="#">About</a>
+
+    </nav>
+    <div class="w-nav-button nav-menu-button" data-ix="new-interaction">
+      <div class="w-icon-nav-menu"></div>
+    </div>
+  </div>
+</div>
+
+
+<div class='view' ng-view></div>
+
+<script type='text/ng-template' id='homepage.html'>
+  <link href="/assets/homepage.css?body=1" media="screen" rel="stylesheet" />
+  <script src="/assets/parallax.js?body=1"/>
+
+  <div id='content'>
+    <article id='manned-flight'>
+      <h2>Artists of Mount Pleasant Present...</h2>
+      <h6>(Scroll)</h6>
+    </article>
+    <article id='frameless-parachute'></article>
+    <article id='english-channel'></article>
+    <article id='about'>
+      <ul>
+        <li><h6>Track List</h6></li>
+        <li class='artist' ng-repeat="artist in artists">
+          <a class='name' href='#/artists/{{artist.id}}'>{{artist.name}}</a>
+        </li>
+      </ul>
+    </article>
+  </div>
+  <!-- Parallax foreground -->
+  <div id='parallax-bg3'>
+    <img alt="Mtpmt pigeon" id="bg3-1" src="/assets/mtpmt-pigeon.png" />
+    <img alt="Mtpmt boom" id="bg3-2" src="/assets/mtpmt-boom.png" />
+    <img alt="Mtpmt cat" id="bg3-3" src="/assets/mtpmt-cat.png" />
+  </div>
+  <!-- Parallax  midground clouds -->
+  <div id='parallax-bg2'>
+    <img alt="cloud" id="bg2-1" src="/assets/mtpmt-papers.png" />
+    <img alt="cloud" id="bg2-2" src="/assets/mtpmt-manhole.png" />
+    <img alt="Mtpmt guy" class="guy" id="bg2-4" src="/assets/mtpmt-guy.png" />
+  </div>
+  <!-- Parallax  background clouds -->
+  <div id='parallax-bg1'>
+    <img alt="cloud" id="bg1-1" src="/assets/mtpmt-bg.jpg" />
+  </div>
+</script>
+
+
+<script type='text/ng-template' id='artist.html'>
+  <%= stylesheet_link_tag "normalize" %>
+  <%= stylesheet_link_tag "webflow" %>
+  <%= stylesheet_link_tag "mpmt.webflow" %>
+  <div>
+    <a href="#/homepage"><%= image_tag "logo-white.png", {class: "w-hidden-tiny main-logo", width: "152"} %></a>
+    <%= image_tag "band-example.jpg", { width: "100%"} %>
+  <div class="band-photo-area">
+    <div class="band-info">
+      <h6>BAND</h6>
+      <h1 class="band-name">{{currentArtist().name}}</h1>
+    </div>
+  </div>
+  </div>
+  <div class="bandinfo">
+    <h2>Story <span class="smallital">of the</span> Band</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
+      rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+    <h2>Story <span class="smallital">of the</span> Song</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
+      rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+    <h2>Favorite DC Thing</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
+      rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+  </div>
+  <div class="band-photo-area nextband">
+    <a class="w-inline-block" href="atbk.html">
+      <div class="band-info nextband">
+        <h6>Next Up...</h6>
+        <h1 class="band-name">All the Best Kids</h1>
+      </div>
+    </a>
+  </div>
+</div>
+</script>

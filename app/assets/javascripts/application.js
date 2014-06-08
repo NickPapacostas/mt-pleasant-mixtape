@@ -13,14 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
-//= require soundcloud_widget
+// = require soundcloud_widget
+// = require soundcloud_init
 
 //= require angular
 //= require angular-resource
 //= require angular-sanitize
-
-//= require parallax
+//= require angular-route
+//= require webflow
 
 //= require_tree .
 

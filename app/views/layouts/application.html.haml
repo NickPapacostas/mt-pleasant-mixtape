@@ -10,28 +10,24 @@
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
 
-  %body{'ng-app' => "ArtistsApp"}
-    .artistsCtrl{'ng-controller' => "ArtistsCtrl"}
-
-      / Side Menu
-
-      #wrapper
-        %nav#primary
-          %ul
+  %body.body-move{'ng-app' => "ArtistsApp"}
+    #wrapper
+      .artistsCtrl{'ng-controller' => "ArtistsCtrl"}
         = yield
-        %a#menu-toggle.btn.btn-primary.btn-lg.toggle{href: "#"}
-          Menu
 
-        #sidebar-wrapper
-          %ul.sidebar-nav
-            %a#menu-close.btn.btn-default.btn-lg.pull-right.toggle{href: "#"}
-              %i.fa.fa-times
-                X
-            %li.sidebar-brand
-              %a{'ng-click' => "setPath('/')"} Mt. Pleasant MixTape
-            %li
-              %a{href: "#artists", 'ng-click' => "setPath('/artists')"} Artists
-            %li
-              %a{href: "#about", 'ng-click' => "setPath('/about')"} About
+      / %a#menu-toggle.btn.btn-primary.btn-lg.toggle{href: "#"}
+      /   Menu
 
-            %iframe#sc-widget{frameborder: "no", height: "465", scrolling: "no", src: "https://w.soundcloud.com/player/?url=https://soundcloud.com/noochluv", width: "100%"}
+      / #sidebar-wrapper
+      /   %ul.sidebar-nav
+      /     %a#menu-close.btn.btn-default.btn-lg.pull-right.toggle{href: "#"}
+      /       %i.fa.fa-times
+      /         X
+      /     %li.sidebar-brand
+      /       %a{'ng-click' => "setPath('/')"} Mt. Pleasant MixTape
+      /     %li
+      /       %a{href: "#artists", 'ng-click' => "setPath('/artists')"} Artists
+      /     %li
+      /       %a{href: "#about", 'ng-click' => "setPath('/about')"} About
+
+      /     %iframe#sc-widget{frameborder: "no", height: "465", scrolling: "no", src: "https://w.soundcloud.com/player/?url=https://soundcloud.com/noochluv", width: "100%"}

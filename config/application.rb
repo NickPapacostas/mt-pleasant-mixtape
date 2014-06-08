@@ -12,7 +12,10 @@ module MtPleasantMixtape
       'bootstrap.css',
       'stylish-portfolio.css',
       'application.css',
-      'homepage.css'
+      'homepage.css',
+      'normalize.css',
+      'webflow.css',
+      'mpmt.webflow.css'
     ]
 
 
