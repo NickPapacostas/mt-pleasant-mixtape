@@ -16,8 +16,8 @@ module MtPleasantMixtape
       'normalize.css',
       'webflow.css',
       'mpmt.webflow.css',
-      'application.js ',
       'parallax.js ',
+      'application.js ',
     ]
 
 
