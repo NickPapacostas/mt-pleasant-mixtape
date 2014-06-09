@@ -16,8 +16,8 @@
 <div class='view' ng-view></div>
 
 <script type='text/ng-template' id='homepage.html'>
-  <link href="/assets/homepage.css?body=1" media="screen" rel="stylesheet" />
-  <script src="/assets/parallax.js?body=1"/>
+  <%= stylesheet_link_tag "homepage" %>
+  <%= javascript_include_tag "parallax" %>
 
   <div id='content'>
     <article id='manned-flight'>
@@ -37,19 +37,19 @@
   </div>
   <!-- Parallax foreground -->
   <div id='parallax-bg3'>
-    <img alt="Mtpmt pigeon" id="bg3-1" src="/assets/mtpmt-pigeon.png" />
-    <img alt="Mtpmt boom" id="bg3-2" src="/assets/mtpmt-boom.png" />
-    <img alt="Mtpmt cat" id="bg3-3" src="/assets/mtpmt-cat.png" />
+    <%= image_tag "mtpmt-pigeon.png", {id: "bg3-1"}%>
+    <%= image_tag "mtpmt-boom.png", {id: "bg3-2"}%>
+    <%= image_tag "mtpmt-cat.png", {id: "bg3-3"}%>
   </div>
   <!-- Parallax  midground clouds -->
   <div id='parallax-bg2'>
-    <img alt="cloud" id="bg2-1" src="/assets/mtpmt-papers.png" />
-    <img alt="cloud" id="bg2-2" src="/assets/mtpmt-manhole.png" />
-    <img alt="Mtpmt guy" class="guy" id="bg2-4" src="/assets/mtpmt-guy.png" />
+    <%= image_tag "mtpmt-papers.png", {id: "bg2-1", alt: "cloud"}%>
+    <%= image_tag "mtpmt-manhole.png", {id: "bg2-2", alt: "cloud"}%>
+    <%= image_tag "mtpmt-guy.png", {id: "bg2-4", 'class' => "guy"}%>
   </div>
   <!-- Parallax  background clouds -->
   <div id='parallax-bg1'>
-    <img alt="cloud" id="bg1-1" src="/assets/mtpmt-bg.jpg" />
+    <%= image_tag "mtpmt-bg.jpg", {id: "bg1-1", alt: "cloud"}%>
   </div>
 </script>
 
