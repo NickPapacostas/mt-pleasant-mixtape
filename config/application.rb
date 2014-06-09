@@ -17,7 +17,6 @@ module MtPleasantMixtape
       'webflow.css',
       'mpmt.webflow.css',
       'application.js '
-
     ]
 
 

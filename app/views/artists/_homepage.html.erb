@@ -1,0 +1,37 @@
+<script type='text/ng-template' id='homepage.html'>
+  <%= stylesheet_link_tag "homepage" %>
+
+  <div id='content'>
+    <article id='manned-flight'>
+      <h2>Artists of Mount Pleasant Present...</h2>
+      <h6>(Scroll)</h6>
+    </article>
+    <article id='frameless-parachute'></article>
+    <article id='english-channel'></article>
+    <article id='about'>
+      <ul>
+        <li><h6>Track List</h6></li>
+        <li class='artist' ng-repeat="artist in artists">
+          <a class='name' href='#/artists/{{artist.id}}'>{{artist.name}}</a>
+        </li>
+      </ul>
+    </article>
+  </div>
+  <!-- Parallax foreground -->
+  <div id='parallax-bg3'>
+    <%= image_tag "mtpmt-pigeon.png", {id: "bg3-1"}%>
+    <%= image_tag "mtpmt-boom.png", {id: "bg3-2"}%>
+    <%= image_tag "mtpmt-cat.png", {id: "bg3-3"}%>
+  </div>
+  <!-- Parallax  midground clouds -->
+  <div id='parallax-bg2'>
+    <%= image_tag "mtpmt-papers.png", {id: "bg2-1", alt: "cloud"}%>
+    <%= image_tag "mtpmt-manhole.png", {id: "bg2-2", alt: "cloud"}%>
+    <%= image_tag "mtpmt-guy.png", {id: "bg2-4", 'class' => "guy"}%>
+  </div>
+  <!-- Parallax  background clouds -->
+  <div id='parallax-bg1'>
+    <%= image_tag "mtpmt-bg.jpg", {id: "bg1-1", alt: "cloud"}%>
+  </div>
+</script>
+

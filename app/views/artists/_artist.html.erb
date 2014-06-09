@@ -1,0 +1,33 @@
+<script type='text/ng-template' id='artist.html'>
+  <a href="#/homepage"><%= image_tag "logo-white.png", {class: "w-hidden-tiny main-logo", width: "152"} %></a>
+
+  <div ng-if="artists">
+    <%= image_tag "band-example.jpg", { width: "100%"} %>
+    <div class="band-photo-area">
+      <div class="band-info">
+        <h6>BAND</h6>
+        <h1 class="band-name">{{activeArtist.name}}</h1>
+      </div>
+    </div>
+    <div class="bandinfo">
+      <div class="w-embed w-iframe">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/radiojuicy/radio-juicy-vol-102"></iframe>
+      </div>
+      <h2>Story <span class="smallital">of the</span> Band</h2>
+      <p>{{activeArtist.story_of_the_band}}</p>
+
+      <h2>Story <span class="smallital">of the</span> Song</h2>
+      <p>{{activeArtist.story_of_the_song}}</p>
+      <h2>Favorite DC Thing</h2>
+      <p>{{activeArtist.favorite_dc_thing}}</p>
+    </div>
+    <div class="band-photo-area nextband">
+      <a class="w-inline-block" href="atbk.html">
+        <div class="band-info nextband">
+          <h6>Next Up...</h6>
+          <h1 class="band-name">All the Best Kids</h1>
+        </div>
+      </a>
+    </div>
+  </div
+</script>
