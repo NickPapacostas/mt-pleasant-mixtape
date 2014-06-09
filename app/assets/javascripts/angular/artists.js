@@ -34,7 +34,7 @@ ArtistsApp.controller("ShowCtrl",
   ['$scope', '$location', '$routeParams', '$anchorScroll', "$sce",
   function($scope, $location, $routeParams, $anchorScroll, $sce) {
     $anchorScroll();
-
+    initializeAngularParallax($scope);
     var sortArtists = function(artists) {
       return artists.sort(function(a, b){
         return parseInt(a.id) - parseInt(b.id)
@@ -43,9 +43,7 @@ ArtistsApp.controller("ShowCtrl",
 
     $scope.initializeNextArtist = function(){
       var sortedArtists = sortArtists($scope.parent_artists);
-      console.log(sortedArtists)
       var activeArtistIndex = sortedArtists.indexOf($scope.activeArtist);
-      console.log(activeArtistIndex)
       $scope.nextArtist = sortedArtists[activeArtistIndex + 1]
     }
 
@@ -79,13 +77,7 @@ ArtistsApp.factory("ArtistFactory", ['$resource', function($resource) {
 var initializeAngularParallax = function($rootScope){
   if(window.location.toString().indexOf('homepage') != -1){
     initializeParallax();
+  } else {
+    $(window).unbind('scroll');
   }
-
-  $rootScope.$on('$stateChangeSuccess', function() {
-    if(window.location.toString().indexOf('homepage') != -1){
-      angular.element(document).ready(function(){
-        initializeParallax();
-      });
-    }
-  });
 }
