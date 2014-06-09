@@ -13,8 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-// = require soundcloud_widget
-// = require soundcloud_init
 
 //= require angular
 //= require angular-resource
