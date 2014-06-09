@@ -15,7 +15,9 @@ module MtPleasantMixtape
       'homepage.css',
       'normalize.css',
       'webflow.css',
-      'mpmt.webflow.css'
+      'mpmt.webflow.css',
+      'application.js'
+
     ]
 
 
