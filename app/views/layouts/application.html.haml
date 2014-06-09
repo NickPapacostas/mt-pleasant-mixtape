@@ -12,8 +12,7 @@
 
   %body.body-move{'ng-app' => "ArtistsApp"}
     #wrapper
-      .artistsCtrl{'ng-controller' => "ArtistsCtrl"}
-        = yield
+      = yield
 
       / %a#menu-toggle.btn.btn-primary.btn-lg.toggle{href: "#"}
       /   Menu

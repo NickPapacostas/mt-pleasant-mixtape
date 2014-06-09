@@ -17,7 +17,6 @@
 
 <script type='text/ng-template' id='homepage.html'>
   <link href="/assets/homepage.css?body=1" media="screen" rel="stylesheet" />
-  <script src="/assets/parallax.js?body=1"/>
 
   <div id='content'>
     <article id='manned-flight'>
@@ -58,34 +57,32 @@
   <%= stylesheet_link_tag "normalize" %>
   <%= stylesheet_link_tag "webflow" %>
   <%= stylesheet_link_tag "mpmt.webflow" %>
-  <div>
-    <a href="#/homepage"><%= image_tag "logo-white.png", {class: "w-hidden-tiny main-logo", width: "152"} %></a>
+  <a href="#/homepage"><%= image_tag "logo-white.png", {class: "w-hidden-tiny main-logo", width: "152"} %></a>
+
+  <div ng-if="artists">
     <%= image_tag "band-example.jpg", { width: "100%"} %>
-  <div class="band-photo-area">
-    <div class="band-info">
-      <h6>BAND</h6>
-      <h1 class="band-name">{{currentArtist().name}}</h1>
-    </div>
-  </div>
-  </div>
-  <div class="bandinfo">
-    <h2>Story <span class="smallital">of the</span> Band</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
-      rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
-    <h2>Story <span class="smallital">of the</span> Song</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
-      rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
-    <h2>Favorite DC Thing</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
-      rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
-  </div>
-  <div class="band-photo-area nextband">
-    <a class="w-inline-block" href="atbk.html">
-      <div class="band-info nextband">
-        <h6>Next Up...</h6>
-        <h1 class="band-name">All the Best Kids</h1>
+    <div class="band-photo-area">
+      <div class="band-info">
+        <h6>BAND</h6>
+        <h1 class="band-name">{{activeArtist.name}}</h1>
       </div>
-    </a>
-  </div>
-</div>
+    </div>
+    <div class="bandinfo">
+      <h2>Story <span class="smallital">of the</span> Band</h2>
+      <p>{{activeArtist.story_of_the_band}}</p>
+
+      <h2>Story <span class="smallital">of the</span> Song</h2>
+      <p>{{activeArtist.story_of_the_song}}</p>
+      <h2>Favorite DC Thing</h2>
+      <p>{{activeArtist.favorite_dc_thing}}</p>
+    </div>
+    <div class="band-photo-area nextband">
+      <a class="w-inline-block" href="atbk.html">
+        <div class="band-info nextband">
+          <h6>Next Up...</h6>
+          <h1 class="band-name">All the Best Kids</h1>
+        </div>
+      </a>
+    </div>
+  </div
 </script>
