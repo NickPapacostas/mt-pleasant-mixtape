@@ -20,19 +20,19 @@ ArtistsApp.config(['$routeProvider',
 
 
 ArtistsApp.controller("ArtistsCtrl",
-  ['$scope', "$sce", "$location", "$routeParams", "ArtistFactory",
-  function($scope, $sce, $location, $routeParams, ArtistFactory) {
+  ['$scope', "$sce", "$location", "$routeParams", '$rootScope', "ArtistFactory",
+  function($scope, $sce, $location, $routeParams, $rootScope, ArtistFactory) {
+    initializeAngularParallax($rootScope);
     $scope.artistsPromise = ArtistFactory.query();
     $scope.artistsPromise.$promise.then( function(data){
       $scope.artists = data;
     });
   }
-]);
+  ]);
 
 ArtistsApp.controller("ShowCtrl",
   ['$scope', '$location', '$routeParams', '$anchorScroll', "$sce",
   function($scope, $location, $routeParams, $anchorScroll, $sce) {
-    // scroll top
     $anchorScroll();
 
     var sortArtists = function(artists) {
@@ -70,9 +70,22 @@ ArtistsApp.controller("ShowCtrl",
       $scope.initializeActiveArtist();
     });
   }
-]);
+  ]);
 
 ArtistsApp.factory("ArtistFactory", ['$resource', function($resource) {
   return $resource("/artists.json");
 }])
 
+var initializeAngularParallax = function($rootScope){
+  if(window.location.toString().indexOf('homepage') != -1){
+    initializeParallax();
+  }
+
+  $rootScope.$on('$stateChangeSuccess', function() {
+    if(window.location.toString().indexOf('homepage') != -1){
+      angular.element(document).ready(function(){
+        initializeParallax();
+      });
+    }
+  });
+}
