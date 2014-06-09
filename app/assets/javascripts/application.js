@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require soundcloud_widget
+//= require parallax
 
 //= require angular
 //= require angular-resource
