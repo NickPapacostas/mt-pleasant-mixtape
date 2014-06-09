@@ -44,7 +44,12 @@ ArtistsApp.controller("ShowCtrl",
     $scope.initializeNextArtist = function(){
       var sortedArtists = sortArtists($scope.parent_artists);
       var activeArtistIndex = sortedArtists.indexOf($scope.activeArtist);
-      $scope.nextArtist = sortedArtists[activeArtistIndex + 1]
+      if(activeArtistIndex == sortedArtists.length - 1){
+        nextArtistIndex = 0
+      } else {
+        nextArtistIndex = activeArtistIndex + 1
+      }
+      $scope.nextArtist = sortedArtists[nextArtistIndex];
     }
 
     $scope.initializeActiveArtist = function() {
