@@ -12,7 +12,7 @@
       <ul>
         <li><h6>Track List</h6></li>
         <li class='artist' ng-repeat="artist in artists">
-          <a class='name' href='#/artists/{{artist.id}}'>{{artist.name}}</a>
+          <a class='name' href='#/artists/{{artist.id}}'>{{artist.name}} <span ng-if="artist.song_name">- {{artist.song_name}}</span></a>
         </li>
       </ul>
     </article>
