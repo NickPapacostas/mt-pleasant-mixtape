@@ -30,8 +30,8 @@ ArtistsApp.controller("ArtistsCtrl",
 ]);
 
 ArtistsApp.controller("ShowCtrl",
-  ['$scope', '$location', '$routeParams', '$anchorScroll',
-  function($scope, $location, $routeParams, $anchorScroll) {
+  ['$scope', '$location', '$routeParams', '$anchorScroll', "$sce",
+  function($scope, $location, $routeParams, $anchorScroll, $sce) {
     // scroll top
     $anchorScroll();
 
@@ -55,6 +55,8 @@ ArtistsApp.controller("ShowCtrl",
           angular.forEach($scope.parent_artists, function(artist) {
             if(artist.id == parseInt($routeParams.id)){
               artist.active = true;
+              var rootSoundCloudPlayerUrl = "https://w.soundcloud.com/player/?url=";
+              artist.song_iframe_url = $sce.trustAsResourceUrl(rootSoundCloudPlayerUrl + artist.song_url);
               $scope.activeArtist = artist
             }
           });

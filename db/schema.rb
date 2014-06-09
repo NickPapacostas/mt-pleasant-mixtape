@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608205010) do
+ActiveRecord::Schema.define(version: 20140609193125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140608205010) do
     t.text     "favorite_dc_thing"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "song_url"
   end
 
   create_table "assets", force: true do |t|
