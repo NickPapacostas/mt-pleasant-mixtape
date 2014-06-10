@@ -232,6 +232,10 @@ nav.next-prev {
       top: 160px;
       text-align: center;
       color:#ffffff;
+
+      img {
+        display:inline;
+        }
       }
     #frameless-parachute {
       position: absolute;
@@ -364,6 +368,7 @@ and (max-width : 960px) {
       top: 90px;
       text-align: center;
       color:#ffffff;
+
       }
 
   #parallax-bg1 {
