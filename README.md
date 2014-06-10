@@ -11,10 +11,12 @@ General (osx)
 ### Git
     brew install git
 
+
 ### Ruby Version Manager
   Install [rvm](https://rvm.io/)
 
-     rvm osx-ssl-certs update all
+### Heroku toolbelt
+    https://toolbelt.heroku.com/
 
 ### Ruby 1.9.3
     rvm install 2.0.0-p353
@@ -44,6 +46,12 @@ If the seed fails, running db:reset instead may work:
 
     rake db:reset
 
+
+### Getting Some Data
+    heroku pgbackups:url
+    navigate to the that url
+    mv ~/Downloads/DUMP_ID.dump tmp/production.dump
+    pg_restore --verbose --clean --no-acl --no-owner -h localhost -d mt_pleasant_mixtape_development tmp/production.dump
 
 ### Run the app
     rails s
