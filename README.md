@@ -43,3 +43,7 @@ The Project
 If the seed fails, running db:reset instead may work:
 
     rake db:reset
+
+
+### Run the app
+    rails s
