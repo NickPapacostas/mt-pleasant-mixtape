@@ -1,6 +1,6 @@
 var ArtistsApp;
 
-ArtistsApp = angular.module("ArtistsApp", ["ngResource", "ngSanitize", "ngRoute"]);
+ArtistsApp = angular.module("ArtistsApp", ["ngResource", "ngSanitize", "ngRoute", "ngAnimate"]);
 
 ArtistsApp.config(['$routeProvider',
   function($routeProvider) {
@@ -17,6 +17,25 @@ ArtistsApp.config(['$routeProvider',
       redirectTo: '/homepage'
     });
   }]);
+
+ArtistsApp.animation('.fade', function() {
+  return {
+    enter: function(element, done) {
+      element.css('display', 'none');
+      element.fadeIn(500, done);
+      return function() {
+        element.stop();
+      }
+    },
+    leave: function(element, done) {
+      element.fadeOut(500, done)
+      return function() {
+        element.stop();
+      }
+    }
+  }
+})
+
 
 
 ArtistsApp.controller("ArtistsCtrl",

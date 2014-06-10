@@ -20,6 +20,7 @@
 //= require angular-resource
 //= require angular-sanitize
 //= require angular-route
+//= require angular-animate
 //= require webflow
 
 //= require_tree .
