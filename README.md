@@ -27,8 +27,8 @@ The Project
 -----------------
 
 ### Clone the Repo
-    git clone git@github.com:LearnZillion/teachfest.git teachfest
-    cd teachfest
+    git clone https://github.com/NickPapacostas/mt-pleasant-mixtape.git
+    cd mt-pleasant-mixtape
 
 ### Bundler
     gem install bundler
