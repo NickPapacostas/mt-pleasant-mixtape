@@ -3,6 +3,7 @@ ArtistsApp.controller("ShowCtrl",
   function($scope, $location, $routeParams, $anchorScroll, $sce) {
     $anchorScroll();
     initializeAngularParallax($scope);
+
     var sortArtists = function(artists) {
       return artists.sort(function(a, b){
         return parseInt(a.id) - parseInt(b.id)

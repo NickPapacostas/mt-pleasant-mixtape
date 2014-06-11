@@ -7,6 +7,7 @@ ArtistsApp.controller("ArtistsCtrl",
       $scope.artists = data;
     });
 
+    $scope.hideMenu = true;
     $scope.scrollTo = function(id){
       $('html, body').animate({
         scrollTop: $("#" + id).offset().top
