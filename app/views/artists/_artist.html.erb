@@ -2,7 +2,8 @@
   <a href="#/homepage"><%= image_tag "logo-white.png", {class: "w-hidden-tiny main-logo", width: "152"} %></a>
 
   <div ng-if="artists">
-    <%= image_tag "band-example.jpg", { width: "100%"} %>
+    <div ng-if="!activeArtist.background_image_url"> <%= image_tag "band-example.jpg", { width: "100%"} %> </div>
+    <img ng-if="activeArtist.background_image_url" ng-src="{{activeArtist.background_image_url}}" width="100%"/>
     <div class="band-photo-area">
       <div class="band-info">
         <h6>BAND</h6>
