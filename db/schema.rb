@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609235039) do
+ActiveRecord::Schema.define(version: 20140611212927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140609235039) do
     t.datetime "updated_at"
     t.text     "song_url"
     t.text     "song_name"
+    t.text     "background_image_url"
   end
 
   create_table "assets", force: true do |t|
