@@ -11,6 +11,6 @@ ArtistsApp.controller("ArtistsCtrl",
     $scope.scrollTo = function(id){
       $('html, body').animate({
         scrollTop: $("#" + id).offset().top
-      }, 2000);
+      }, 5000);
     };
   }]);

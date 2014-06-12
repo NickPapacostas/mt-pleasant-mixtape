@@ -1,3 +1,74 @@
+#menu {
+  position:fixed;
+  right:0px;
+  top:0px;
+  background: black;
+  color: white;
+  z-index:5;
+
+  .menu-toggle {
+    text-align: right;
+  }
+}
+#menu {
+  background: none!important;
+  width: 250px;
+}
+
+.menu-toggle {
+  background-color: #333;
+  float: right;
+  margin: .6em;
+  padding: .6em .95em;
+  width: auto;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  background-color: #222;
+}
+
+.menu a{
+  color: white!important;
+  padding: .6em;
+  display: block;
+  background:#333;
+  font-size: .8em;
+}
+
+.menu a:hover{
+  background:#222;
+}
+
+.menu {
+  transition:300ms;
+}
+
+.menu-toggle span{
+  display: none;
+}
+
+.active .menu-toggle {
+  background: #000;
+  position: relative;
+  z-index:999;
+}
+
+#menu ul.ng-hide {
+  right: -250px;
+  display: block!important;
+}
+
+#menu ul {
+  position: absolute;
+  width: 250px;
+  right: 0px;
+  transition:300ms;
+}
+
+/* SPENCE ENDS HERE*/
+
 ol, ul {
   list-style: none;
 }
@@ -7,21 +78,9 @@ ol, ul {
 
 .ng-hide {
     /* this is just another form of hiding an element */
+    /* we use this because 'display:none' would remove the persistent player*/
     visibility: hidden;
   }
-#menu {
-  position:fixed;
-  right:0px;
-  top:0px;
-  width:25%;
-  background: black;
-  color: white;
-  z-index:5;
-
-  .menu-toggle {
-    text-align: right;
-  }
-}
 
 /* IE 6 */
 * html #menu {
