@@ -9,6 +9,9 @@ ArtistsApp.config(['$routeProvider',
       templateUrl: 'artist.html',
       controller: 'ShowCtrl'
     }).
+    when('/about', {
+      templateUrl: 'about.html',
+    }).
     when('/homepage', {
       templateUrl: 'homepage.html',
       controller: 'ArtistsCtrl'
