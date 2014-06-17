@@ -23,7 +23,9 @@ General (osx)
 
 ### Postgres
     brew install postgres
+    run the two commands at the end of the brew install output (or run `brew info postgres` to see the message again)
     initdb /usr/local/var/postgres -E utf8
+
 
 The Project
 -----------------
@@ -35,6 +37,11 @@ The Project
 ### Bundler
     gem install bundler
     bundle install
+
+### Generate a secret key
+    rake secret
+    export SECRET_KEY_BASE=OUTPUT_OF_LAST_COMMAND
+    (replace OUTPUT_OF_LAST_COMMAND with result of rake secret)
 
 
 ### Create the Databases
@@ -49,9 +56,11 @@ If the seed fails, running db:reset instead may work:
 
 ### Getting Some Data
     heroku pgbackups:url
-    navigate to the that url
+    navigate to the that url (in a browser)
+    mkdir tmp
     mv ~/Downloads/DUMP_ID.dump tmp/production.dump
     pg_restore --verbose --clean --no-acl --no-owner -h localhost -d mt_pleasant_mixtape_development tmp/production.dump
 
 ### Run the app
     rails s
+    navigate to localhost:3000

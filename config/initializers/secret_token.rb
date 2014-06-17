@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MtPleasantMixtape::Application.config.secret_key_base = 'ecc1b5cffcbce39ac82a3d8bc3740d76d109c1f8095e0adf83b0e0dd2d3241406bd08a963f690266b478321541d6f2cc24dfc83466935257d7e19f48adbeb2fd'
+MtPleasantMixtape::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
