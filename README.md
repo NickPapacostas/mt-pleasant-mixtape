@@ -1,5 +1,11 @@
 == README
 
+This app was meant to support the Mt. Pleasant Mixtape initiative. It uses Rails on the backend and Angular on the front end. One major goal was to have a music player that stayed with you (uninterrupted) as you browsed the bands, which is why we used Angular. I didn't do the design! All props go to Spence Nelson. Has a nice active admin cms backend too. Unfortunately the whole thing never really came together (thus the unrelated playlist in the menu player) but it was a lot of fun to work on. 
+
+See how far it came here: http://mt-pleasant-mixtape.herokuapp.com/#/homepage
+
+
+
 General (osx)
 ---------------------
 
